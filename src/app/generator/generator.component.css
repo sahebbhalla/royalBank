@@ -1,0 +1,21 @@
+#row{
+    position: relative;
+    left:2%;
+   
+}
+#container{
+    background-color:#1CBECB;
+    height: 100%;
+    position: relative;
+    width:100%;
+    left:0%;
+    border-radius: 20px;
+    padding: 2%;
+    color: white;
+}
+.btn{
+    background-color:rgb(248, 248, 248);
+    width:20%;
+    color:black;
+    font-weight: bolder;
+}

@@ -1,0 +1,101 @@
+<div id="most">
+    <div id="container">
+        <h3>Welcome, {{account.name}}</h3>
+        <h4>Your Balance is ==> ${{account.balance}}</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Type</th>
+                    <th scope="col">Transaction Date</th>
+                    <th scope="col">Amount</th>
+
+                    <th scope="col"> Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let transaction of account.transactions">
+                    <td scope="col">{{transaction.type}}</td>
+                    <td scope="col">{{transaction.date.toISOString().slice(0, 10)}}</td>
+                    <td scope="col">{{transaction.amount}}</td>
+                    <td scope="col">{{transaction.currentBalance}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+        <!-- <H2 id="balance"> Balance &#8658; ${{account.balance}}</H2> -->
+
+    </div>
+
+    <div class="row" id="addTrans">
+
+        <form>
+            <div class="row">
+                <div class="col-sm-2">
+                    <label for="name">Deposit</label>
+                </div>
+                <div class="col-sm-5">
+                    <input type="number" id="name" class="form-control" #deposit>
+
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-success" type="button" (click)="depositAmount(deposit.value)"
+                        (click)="deposit.value=''"> + Deposit</button>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-2">
+                    <label for="name">Withdraw</label>
+                </div>
+                <div class="col-sm-5">
+                    <input type="number" id="name" class="form-control" #withdraw>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-success" type="button" (click)="withdrawl(-withdraw.value)"
+                        (click)="withdraw.value=''"> - Withdraw</button>
+                </div>
+            </div>
+            <hr>
+            <h2>Send Money </h2>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="name">Account Number</label>
+                </div>
+                <div class="col-sm-5">
+                    <input type="number" id="name" class="form-control" #accountNumber>
+                </div>
+
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="name">send To</label>
+                </div>
+                <div class="col-sm-5">
+                    <input type="text" id="name" class="form-control" #name>
+                </div>
+
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="name">Amount</label>
+                </div>
+                <div class="col-sm-5">
+                    <input type="number" id="name" class="form-control" #transferAmount>
+                </div>
+                <div class="col-sm-3">
+                    <button class="btn btn-success" type="button"
+                        (click)="transfer(accountNumber.value,-transferAmount.value,name.value)"
+                        (click)="withdraw.value=''">Send</button>
+                </div>
+
+            </div>
+            <div class="row">
+         
+            </div>
+        </form>
+
+    </div>
+
+</div>

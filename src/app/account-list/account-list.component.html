@@ -1,0 +1,24 @@
+<div id="container">
+    <div id="list">
+        <h1>Accounts</h1>
+
+        <table class ="table"> 
+            <thead>
+            <tr id="firstrow">
+                <th scope="col">Name</th>
+                <th scope="col">Account Number</th>
+                <th scope="col">Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor ="let account of accounts">
+                <td (click) ="onSelected(account)">{{account.name}}</td>
+                <td (click) ="onSelected(account)">{{account.id}}</td>
+                <td (click) ="onSelected(account)">${{account.balance}}</td>
+            </tr>
+        </tbody> 
+        </table>
+    </div>
+    <app-generator id="generator"></app-generator>
+
+</div>
